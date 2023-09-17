@@ -1,0 +1,17 @@
+def BurbujaS(arr):
+    num = len(arr)
+
+    for i in range(num):
+   
+        for j in range(0, num - i - 1):
+
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+arr=[5,2,47,9,24,14]
+print('Arreglo original:\t',arr)
+BurbujaS(arr)
+
+print("Arreglo ordenado:")
+for i in arr:
+    print(i, end=" ")
