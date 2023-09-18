@@ -1,13 +1,33 @@
-def burbujaP(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n - i - 1):
+#Alejandro Ulloa Reyes 3CM2 Ing. Sistemas Computacionales UPIIZ IPN
+print('Bienvenido a esta aplicacion de ordenamiento Burbuja Dinamica')  
+def burbujaD(arr):
+    num = len(arr)
+    for i in range(num):
+        for j in range(0, num - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-# Ejemplo de uso
-lista = [5,2,47,9,24,14]
+def in_array():
+    try:
+        num = int(input('Porfavor coloque el tamaño del arreglo:\t'))
+        if num < 0:
+            print('El tamaño del arreglo debe ser un número positivo. Porfavor vuelve a intentarlo')
+            return None
+        arr = []
+        for i in range(num):
+            try:
+                element = float(input(f'Ingrese el elemento {i + 1}: '))
+                arr.append(element)
+            except ValueError:
+                print('Error: Ingrese un número válido.')
+                return None
+        return arr
+    except ValueError:
+        print('Error: Ingrese un tamaño válido (número entero positivo).')
+        return None
 
-print("Lista original:", lista)
-burbujaP(lista)
-print("Lista ordenada:", lista)
+user_array = in_array()
+if user_array is not None:
+    print("El arreglo original es:\t", user_array)
+    burbujaD(user_array)
+    print("El arreglo ordenado es:\t", user_array)
