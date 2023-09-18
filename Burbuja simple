@@ -1,17 +1,20 @@
-def BurbujaS(arr):
+#Alejandro Ulloa Reyes 3CM2 Ing. Sistemas Computacionales UPIIZ IPN
+print('Bienvenido a esta aplicacion de ordenamiento Burbuja')  
+def burbuja(arr):
     num = len(arr)
-
     for i in range(num):
-   
-        for j in range(0, num - i - 1):
+        for j in range(0, num-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+num = int(input('Porfavor coloque el tamaño del arreglo:\t'))
 
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+arr = []
+for i in range(num):
+    elemento = int(input(f'Ingrese el elemento {i+1}:\t'))
+    arr.append(elemento)
 
-arr=[5,2,47,9,24,14]
-print('Arreglo original:\t',arr)
-BurbujaS(arr)
+print('El arreglo original es:\t', arr)
 
-print("Arreglo ordenado:")
-for i in arr:
-    print(i, end=" ")
+burbuja(arr)
+
+print('El arreglo ordenado es:\t', arr)
