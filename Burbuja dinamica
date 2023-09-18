@@ -1,4 +1,6 @@
 #Alejandro Ulloa Reyes 3CM2 Ing. Sistemas Computacionales UPIIZ IPN
+import time
+inicio=time.time()
 print('Bienvenido a esta aplicacion de ordenamiento Burbuja Dinamica')  
 def burbujaD(arr):
     num = len(arr)
@@ -11,7 +13,7 @@ def in_array():
     try:
         num = int(input('Porfavor coloque el tamaño del arreglo:\t'))
         if num < 0:
-            print('El tamaño del arreglo debe ser un número positivo. Porfavor vuelve a intentarlo')
+            print('El tamaño del arreglo debe ser un numero positivo. Porfavor vuelve a intentarlo')
             return None
         arr = []
         for i in range(num):
@@ -19,15 +21,19 @@ def in_array():
                 element = float(input(f'Ingrese el elemento {i + 1}: '))
                 arr.append(element)
             except ValueError:
-                print('Error: Ingrese un número válido.')
+                print('Error: Ingrese un numero valido.')
                 return None
         return arr
     except ValueError:
-        print('Error: Ingrese un tamaño válido (número entero positivo).')
+        print('Error: Ingrese un tamaño valido (numero entero positivo).')
         return None
 
 user_array = in_array()
 if user_array is not None:
+    
     print("El arreglo original es:\t", user_array)
     burbujaD(user_array)
     print("El arreglo ordenado es:\t", user_array)
+    fin=time,time()
+    tiempo_ejecutado=fin-inicio
+    print('El tiempo que tarda en ejecutar este codigo es de:\t',tiempo_ejecutado)
