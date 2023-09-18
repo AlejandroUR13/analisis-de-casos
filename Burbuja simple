@@ -1,4 +1,6 @@
 #Alejandro Ulloa Reyes 3CM2 Ing. Sistemas Computacionales UPIIZ IPN
+import time
+inicio=time.time()
 print('Bienvenido a esta aplicacion de ordenamiento Burbuja')  
 def burbuja(arr):
     num = len(arr)
@@ -14,7 +16,9 @@ for i in range(num):
     arr.append(elemento)
 
 print('El arreglo original es:\t', arr)
-
 burbuja(arr)
-
 print('El arreglo ordenado es:\t', arr)
+
+fin=time.time()
+tiempo_ejecutado=fin-inicio
+print('El tiempo que tardo en ejecutar el codigo es de:\t',tiempo_ejecutado)
